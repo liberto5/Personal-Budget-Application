@@ -134,3 +134,18 @@ input:focus:-ms-input-placeholder
 {
     color: #d39a32;
 }
+
+.mainMenuButtons
+{
+	width: 300px;
+	background-color: #e49a32;
+	font-size:20px;
+	color: white;
+	padding: 10px 10px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+}
