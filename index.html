@@ -2,27 +2,35 @@
 <html lang="en-us">
 <head>
 	<meta charset="utf-8" />
-	<title>Personal Budget</title>
-	<meta name="description" content="Take control of your finances..." />
-	<meta name="keywords" content="finance, finances, income, expense" />
+	<title>Personal Budget - Sign In</title>
+	<meta name="description" content="Take control of your finances" />
+	<meta name="keywords" content="finance, finances, income, expense, budget" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		
 	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Anton|Pacifico&amp;subset=latin-ext" rel="stylesheet">
 	
 </head>
 
 <body>
 
 	<div id="container">
+	
+		<h1>Personal Budget</h1>
+		<h3>Take control of your finances</h3>
+	
 		<form>
 			
-			<input type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" >
+			<input type="email" placeholder="E-mail address" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail address'" required>
 			
-			<input type="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'" >
+			<input type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required>
 			
-			<input type="submit" value="Login">
+			<input type="submit" value="Sign in">
 			
 		</form>
+		
+		<button onclick="window.location.href = 'user-sign-up.html';">Sign up</button>
+		
 	</div>
 	
 </body>
