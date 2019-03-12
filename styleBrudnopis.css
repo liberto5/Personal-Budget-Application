@@ -1,0 +1,33 @@
+body{
+    background-color: #bdbdbd;
+}
+fieldset{
+    background-color: white;
+    border: 1px solid black;
+    display: table;
+}
+legend{
+    border: 1px solid black;
+    background-color: #70DB93;
+}
+label input{
+      
+    width: 200px;
+    background-color: pink;
+    display: table-cell;
+}
+label span
+{
+    display: table-cell;
+}
+label span[gwiazdka]::after
+{
+    content: "*";
+    color: red;
+}
+label{
+    display: table-row;
+}
+#number{
+    background-color: #93DB70;
+}
