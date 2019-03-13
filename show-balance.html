@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8" />
+	<title>Balance in Personal Budget</title>
+	<meta name="description" content="Take control of your finances" />
+	<meta name="keywords" content="finance, finances, income, expense, budget" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Anton|Pacifico&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+
+	<script>
+		window.onload = function() 
+		{
+			var chart = new CanvasJS.Chart("chartIncomesContainer", 
+				{
+					animationEnabled: true,
+					title: 
+					{
+						text: "Summary of your incomes"
+					},
+					data: [
+					{
+						type: "pie",
+						startAngle: 270,
+						yValueFormatString: "##0.00\"%\"",
+						indexLabel: "{label} {y}",
+						dataPoints: 
+						[
+							{y: 95.56, label: "Salary"},
+							{y: 1.14, label: "Bank interest"},
+							{y: 0.72, label: "Sales"},
+							{y: 2.58, label: "Other"}
+						]
+					}]
+				});
+				
+			chart.render();
+			
+			var chart = new CanvasJS.Chart("chartExpensesContainer", 
+				{
+					animationEnabled: true,
+					title: 
+					{
+						text: "Summary of your expenses"
+					},
+					data: [
+					{
+						type: "pie",
+						startAngle: 270,
+						yValueFormatString: "##0.00\"%\"",
+						indexLabel: "{label} {y}",
+						dataPoints: 
+						[
+							{y: 26.07, label: "Food"},
+							{y: 45.91, label: "Rent"},
+							{y: 3.67, label: "Transport"},
+							{y: 1.38, label: "Phone"},
+							{y: 0.00, label: "Healthcare"},
+							{y: 5.57, label: "Clothes"},
+							{y: 0.84, label: "Hygiene"},
+							{y: 0.00, label: "Children"},
+							{y: 12.71, label: "Entertainment"},
+							{y: 0.00, label: "Trip"},
+							{y: 0.00, label: "Trainings"},
+							{y: 2.57, label: "Books"},
+							{y: 0.00, label: "Savings"},
+							{y: 0.00, label: "Retirement"},
+							{y: 0.00, label: "Debt repayment"},
+							{y: 0.00, label: "Donation"},
+							{y: 1.28, label: "Other"}
+						]
+					}]
+				});
+			chart.render();
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="balanceContainer">
+	
+		<h1>Personal Budget</h1>
+		<h3>Take control of your finances</h3>
+	
+		<fieldset id="balance">
+		
+			<legend id="showBalance"> Your finances </legend>
+			
+			<label class="datesForSummary">Select period of time: </label>
+				<select id="periodOfTime" required>
+					<option selected>Current month</option>
+					<option>Previous month</option>
+					<option>Current year</option>
+					<option>Custom</option>
+				</select>	
+					
+			<label class="datesForSummary"> Start: <input class="datesForSummary" type="date" required></label>
+			<label class="datesForSummary"> End: <input class="datesForSummary" type="date" required></label>
+			
+			<div id="summary">
+				<p class="summary">Total balance: -85,40 EUR</p>
+				<p class="summary">Be careful, you run into debt!</p>
+			</div>
+			
+			<div id="tableWithIncomes">
+			
+				<fieldset class="incomesFieldset">
+					
+					<legend class="operationLegend"> Incomes </legend>
+				
+					<div id="firstIncomesColumn">
+						<div class="categoriesFirstRow"> Category </div>
+						<div class="categoriesA"> Salary </div>
+						<div class="categoriesB"> Bank interest </div>
+						<div class="categoriesA"> Sales </div>
+						<div class="categoriesB"> Other </div>
+						<div class="categoriesA" id="categoriesTotal"> Total </div>
+					</div>
+					
+					<div id="secondIncomesColumn">
+						<div class="categoriesFirstRow"> Amount </div>
+						<div class="categoriesA"> 2000.00 </div>
+						<div class="categoriesB"> 23.87 </div>
+						<div class="categoriesA"> 14.99 </div>
+						<div class="categoriesB"> 54.12 </div>
+						<div class="categoriesA" id="categoriesTotal"> 2092.98 </div>
+					</div>
+					
+					<div id="chartIncomesContainer"></div>
+					<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+				
+				</fieldset>
+				
+				<div style="clear: both;"></div>
+			
+			</div>
+			
+			<div id="tableWithExpenses">
+			
+				<fieldset class="expensesFieldset">
+				
+					<legend class="operationLegend"> Expenses </legend>
+				
+					<div id="firstExpensesColumn">
+						<div class="categoriesFirstRow"> Category </div>
+						<div class="categoriesA"> Food </div>
+						<div class="categoriesB"> Rent </div>
+						<div class="categoriesA"> Transport </div>
+						<div class="categoriesB"> Phone </div>
+						<div class="categoriesA"> Healthcare </div>
+						<div class="categoriesB"> Clothes </div>
+						<div class="categoriesA"> Hygiene </div>
+						<div class="categoriesB"> Children </div>
+						<div class="categoriesA"> Entertainment </div>
+						<div class="categoriesB"> Trip </div>
+						<div class="categoriesA"> Trainings </div>
+						<div class="categoriesB"> Books </div>
+						<div class="categoriesA"> Savings </div>
+						<div class="categoriesB"> Retirement </div>
+						<div class="categoriesA"> Debt repayment </div>
+						<div class="categoriesB"> Donation </div>
+						<div class="categoriesA"> Other </div>
+						<div class="categoriesB" id="categoriesTotal"> Total </div>
+					</div>
+					
+					<div id="secondExpensesColumn">
+						<div class="categoriesFirstRow"> Amount </div>
+						<div class="categoriesA"> 567.92 </div>
+						<div class="categoriesB"> 1000.00 </div>
+						<div class="categoriesA"> 80.00 </div>
+						<div class="categoriesB"> 30.00 </div>
+						<div class="categoriesA"> 0.00 </div>
+						<div class="categoriesB"> 121.37 </div>
+						<div class="categoriesA"> 18.28 </div>
+						<div class="categoriesB"> 0.00 </div>
+						<div class="categoriesA"> 276.87 </div>
+						<div class="categoriesB"> 0.00 </div>
+						<div class="categoriesA"> 0.00 </div>
+						<div class="categoriesB"> 56.00 </div>
+						<div class="categoriesA"> 0.00 </div>
+						<div class="categoriesB"> 0.00 </div>
+						<div class="categoriesA"> 0.00 </div>
+						<div class="categoriesB"> 0.00 </div>
+						<div class="categoriesA"> 27.94 </div>
+						<div class="categoriesB" id="categoriesTotal"> 2178.38 </div>
+					</div>
+					
+					<div id="chartExpensesContainer"></div>
+					<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+					
+				</fieldset>
+				
+			</div>	
+	
+		</fieldset>
+		
+	</div>
+	
+</body>
+</html>

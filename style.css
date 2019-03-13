@@ -7,7 +7,8 @@ body
 	font-size: 20px;
 }
 
-#container
+#container,
+#balanceContainer
 {
 	background-color: white;
 	width: 300px;
@@ -37,7 +38,9 @@ h3
 }
 
 h4,
-legend[id=financialOperation]
+legend[id=financialOperation],
+legend[id=showBalance],
+legend[class=operationLegend]
 {
 	padding: 15px 0 5px 0;
 	font-family: 'Roboto', sans-serif;
@@ -46,20 +49,20 @@ legend[id=financialOperation]
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: 24px;
-	
 }
 
 p[class=greeting]
 {
 	margin-top: 0;
-	margin-bottom: 5px;;
+	margin-bottom: 5px;
 }
 
 input[class=registrationFields],
 input[id=amount],
 input[id=date],
 select,
-textarea[id=comments]
+textarea[id=comments],
+input[class=datesForSummary]
 {
 	width: 300px;
 	background-color: #efefef;
@@ -78,7 +81,8 @@ input[id=amount]:focus,
 input[id=date]:focus,
 option:focus,
 textarea[id=comments]:focus,
-select:focus
+select:focus,
+input[class=datesForSummary]:focus
 {
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
 	-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
@@ -92,7 +96,8 @@ input[class=registationButtons],
 button[class=registationButtons],
 button[class=mainMenuButtons],
 input[class=addDetailsOfOperationButton],
-button[class=addDetailsOfOperationButton]
+button[class=addDetailsOfOperationButton],
+button[class=summeryButton]
 {
 	width: 300px;
 	background-color: #e49a32;
@@ -114,7 +119,8 @@ button[id=signUpButton]
 }
 
 input[type=submit]:focus,
-button[id=signInSignUp]:focus
+button[id=signInSignUp]:focus,
+button[class=summeryButton]:focus
 {
 	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
 	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
@@ -122,7 +128,8 @@ button[id=signInSignUp]:focus
 }
 
 input[type=submit]:hover,
-button[id=signInSignUp]:hover
+button[id=signInSignUp]:hover,
+button[class=summeryButton]:hover
 {
 	background-color: #d38a21;
 }
@@ -188,7 +195,9 @@ textarea[id=comments]
 	width: 260px;
 }
 
-label[class=expenseLabel]
+label[class=expenseLabel],
+label[id=periodOfBalance],
+label[class=datesForSummary]
 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
@@ -234,22 +243,132 @@ button[class=addDetailsOfOperationButton]
 	margin-left: 15px;
 }
 
+#balanceContainer
+{
+	width: 1050px;
+}
 
+select[id=periodOfTime]
+{
+	width: 185px;
+	padding: 5px 0;
+}
 
+input[class=datesForSummary]
+{
+	padding: 3px 0;
+	width: 200px;
+}
 
+label[class=datesForSummary]
+{
+	padding: 0 0 0 30px;
+}
 
+#firstIncomesColumn,
+#secondIncomesColumn,
+#firstExpensesColumn,
+#secondExpensesColumn
+{
+	float: left;
+}
 
+.categoriesFirstRow,
+.categoriesA,
+.categoriesB,
+.categoriesTotal
+{
+	width: 150px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
 
+.categoriesFirstRow
+{
+	background-color: #e49a32;
+	font-weight: 700;
+}
 
+.categoriesB
+{
+	background-color: #ffeadc;
+}
 
+#categoriesTotal
+{
+	font-weight: 700;
+}
 
+#tableWithIncomes
+{
+	margin-left: 20px;
+	margin-top: 30px;
+} 
 
+#tableWithExpenses
+{
+	margin-left: 20px;
+	margin-top: 30px;
+} 
 
+#summary
+{
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	height: 80px;
+	border: 2px solid #a71f0d;
+	background-color: #f22d13;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+}
 
+p[class=summary]
+{
+	margin: 0px;
+}
 
+#chartIncomesContainer,
+#chartExpensesContainer
+{
+	height: 430px; 
+	width: 550px;
+	margin-left: 350px;
+}
 
+button[class=summeryButton]
+{
+	width: 150px;
+	padding: 5px;
+}
 
+.tableTitles
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	margin-bottom: 20px;
+	text-align: center;
+}
 
+fieldset[class=incomesFieldset],
+fieldset[class=expensesFieldset]
+{
+	width: 935px;
+}
 
-
-
+legend[class=operationLegend]
+{
+	text-align: left;
+	border: 1px solid #000000;
+	padding: 8px 35px;
+	background-color: rgba(6, 150, 10, 0.4);
+}
